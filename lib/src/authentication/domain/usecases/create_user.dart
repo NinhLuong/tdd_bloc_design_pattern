@@ -16,18 +16,18 @@ class CreateUser extends UsecaseWithParams<void, CreateUserParams> {
   );
   }
 
-  class CreateUserParams extends Equatable {
-    final String createdAt;
-    final String name;
-    final String avatar;
+class CreateUserParams extends Equatable {
+  final String createdAt;
+  final String name;
+  final String avatar;
 
-    const CreateUserParams({
-      required this.createdAt,
-      required this.name,
-      required this.avatar,
-    });
+  const CreateUserParams({
+    required this.createdAt,
+    required this.name,
+    required this.avatar,
+  });
 
-  @override
-  List<Object?> get props => [createdAt, name, avatar];
+@override
+List<Object?> get props => [createdAt, name, avatar];
 
-  }
+}
