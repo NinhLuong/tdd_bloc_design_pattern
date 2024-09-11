@@ -4,17 +4,22 @@ import 'package:tdd_bloc_design_pattern/core/utils/typedef.dart';
 import 'package:tdd_bloc_design_pattern/src/authentication/domain/entities/user.dart';
 
 class UserModel extends User {
-  const UserModel.empty() : this(id: 1, createdAt: '_empty.createdAt', name: '_empty.name', avatar: '_empty.avatar');
+  const UserModel.empty() : this(
+      id: "1",
+      createdAt: '_empty.createdAt',
+      name: '_empty.name',
+      avatar: '_empty.avatar'
+  );
 
   const UserModel({
-    required int id,
-    required String createdAt,
-    required String name,
-    required String avatar,
-  }) : super(id: 0, createdAt: '', name: '', avatar: '');
+    required super.id,
+    required super.createdAt,
+    required super.name,
+    required super.avatar,
+  });
 
   UserModel copyWith({
-    int? id,
+    String? id,
     String? createdAt,
     String? name,
     String? avatar,
@@ -27,12 +32,11 @@ class UserModel extends User {
     );
   }
 
-
-  factory UserModel.fromJson(String source) => UserModel.fromMap(json.decode(source));
+  factory UserModel.fromJson(String source) => UserModel.fromMap(jsonEncode(source) as DataMap);
 
   UserModel.fromMap(DataMap map)
       : this(
-          id: map['id'] as int,
+          id: map['id'] as String,
           createdAt: map['createdAt'] as String,
           name: map['name'] as String,
           avatar: map['avatar'] as String,
@@ -45,5 +49,5 @@ class UserModel extends User {
         'avatar': avatar,
       };
 
-  String toJson() => json.encode(toMap());
+  String toJson() => jsonEncode(toMap());
 }

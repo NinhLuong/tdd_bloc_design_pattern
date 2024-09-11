@@ -1,38 +1,6 @@
-[
   {
-    "createdAt": "2024-09-04T10:25:07.470Z",
-    "name": "Eunice Leffler",
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/531.jpg",
-    "id": "1"
-  },
-  {
-    "createdAt": "2024-09-04T12:26:21.639Z",
-    "name": "Fred Kohler",
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1247.jpg",
-    "id": "2"
-  },
-  {
-    "createdAt": "2024-09-05T06:57:24.668Z",
-    "name": "Dana Dicki",
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/825.jpg",
-    "id": "3"
-  },
-  {
-    "createdAt": "2024-09-04T18:57:05.668Z",
-    "name": "Tami Greenfelder",
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/354.jpg",
-    "id": "4"
-  },
-  {
-    "createdAt": "2024-09-04T16:32:59.961Z",
-    "name": "Luis Reilly",
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/702.jpg",
-    "id": "5"
-  },
-  {
-    "createdAt": "2024-09-04T14:04:45.126Z",
-    "name": "Larry Lindgren",
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1159.jpg",
-    "id": "6"
+    "id": "1",
+    "createdAt": "_empty.createdAt",
+    "name": "_empty.name",
+    "avatar": "_empty.avatar"
   }
-]
