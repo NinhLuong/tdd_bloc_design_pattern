@@ -24,7 +24,11 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   ResultFuture<List<User>> getUsers() async {
-    // TODO: implement getUsers
-    throw UnimplementedError();
+    try {
+      final result = await _remoteDataSource.getUsers();
+      return Right(result);
+    } on APIException catch (e) {
+      return Left(APIFailure(message: e.message, statusCode: e.statusCode));
+    }
   }
 }

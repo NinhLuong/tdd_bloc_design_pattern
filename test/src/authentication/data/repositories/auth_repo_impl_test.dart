@@ -5,6 +5,7 @@ import 'package:tdd_bloc_design_pattern/core/errors/exceptions.dart';
 import 'package:tdd_bloc_design_pattern/core/errors/failure.dart';
 import 'package:tdd_bloc_design_pattern/src/authentication/data/datasouces/auth_remote_data_source.dart';
 import 'package:tdd_bloc_design_pattern/src/authentication/data/repositories/auth_repo_impl.dart';
+import 'package:tdd_bloc_design_pattern/src/authentication/domain/entities/user.dart';
 
 class MockAuthRemoteDataSrc extends Mock implements AuthRemoteDataSource {}
 
@@ -60,13 +61,26 @@ void main() {
   group("getUsers", () {
     test("show call AuthRemoteDataSource.getUsers ", () async {
       // arrange
-      when(() => remoteDataSource.getUsers()).thenAnswer((_) async => Future.value([]));
+      when(() => remoteDataSource.getUsers()).thenAnswer((_) async => []);
 
       // act
       final result = await authRepoImpl.getUsers();
 
       // assert
-      expect(result, equals(const Right([])));
+      expect(result, isA< Right<dynamic, List<User>>>());
+      verify(() => remoteDataSource.getUsers()).called(1);
+      verifyNoMoreInteractions(remoteDataSource);
+    });
+
+    test("should return a [APIFailure] when the call to the remote data source is unsuccessful", () async {
+      // arrange
+      when(() => remoteDataSource.getUsers()).thenThrow(tException);
+
+      // act
+      final result = await authRepoImpl.getUsers();
+
+      // assert
+      expect(result, equals(Left(APIFailure(message: tException.message , statusCode: tException.statusCode))));
       verify(() => remoteDataSource.getUsers()).called(1);
       verifyNoMoreInteractions(remoteDataSource);
     });

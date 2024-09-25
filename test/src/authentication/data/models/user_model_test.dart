@@ -7,6 +7,7 @@ import 'package:tdd_bloc_design_pattern/src/authentication/domain/entities/user.
 
 import '../../../../fixtures/fixture_reader.dart';
 
+
 void main() {
   const tModel = UserModel.empty();
 
